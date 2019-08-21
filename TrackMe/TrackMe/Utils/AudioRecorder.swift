@@ -19,9 +19,10 @@ enum AudioRecorderError: Error {
 class AudioRecorder: NSObject {
 
     weak var delegate: AudioRecorderDelegate?
-    let filesManager = FilesManager()
     var recordingSession: AVAudioSession!
     var audioRecorder: AVAudioRecorder?
+    var audioFilePath: URL!
+    var savePath: URL?
     let settings = [
         AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
         AVSampleRateKey: 12000,
@@ -35,7 +36,8 @@ class AudioRecorder: NSObject {
         recordingSession = AVAudioSession.sharedInstance()
     }
 
-    func record() {
+    func record(savePath: URL) {
+        self.savePath = savePath
         grantRecordPermission {[weak self] in
             guard let `self` = self else {return}
             self.startRecord()
@@ -45,10 +47,8 @@ class AudioRecorder: NSObject {
     func stopRecord() {
         audioRecorder?.stop()
         audioRecorder = nil
-        let dir = filesManager.getDocumentsDirectory()
-        let audioFilename = dir.appendingPathComponent("recording.m4a")
-        delegate?.recordSuccess(filePath: audioFilename.absoluteString)
-        print("Saved in \(audioFilename)")
+        guard let path = savePath else {return}
+        delegate?.recordSuccess(filePath: path.absoluteString)
     }
 
     //MARK: internal methods
@@ -73,10 +73,9 @@ class AudioRecorder: NSObject {
     }
 
     private func startRecord() {
-        let dir = filesManager.getDocumentsDirectory()
-        let audioFilename = dir.appendingPathComponent("recording.m4a")
         do {
-            audioRecorder = try AVAudioRecorder(url: audioFilename, settings: settings)
+            guard let path = savePath else {return}
+            audioRecorder = try AVAudioRecorder(url: path, settings: settings)
             audioRecorder?.delegate = self
             audioRecorder?.record()
         } catch {

@@ -15,10 +15,8 @@ class NewRecordScreen: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Add note"
         recordButton.setImage(viewModel.recordButtonImage, for: .normal)
-
-
-        
     }
     
 

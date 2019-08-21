@@ -12,6 +12,8 @@ import UIKit
 class NewRecordViewModel {
 
     private var audioRecorder = AudioRecorder()
+    private let filesManager = FilesManager()
+    private let dbManager = DBManager()
     private let stopRecordIcName = "stopRecordIc"
     private let startRecordIcName = "startRecordIc"
     var isRecording = false
@@ -43,13 +45,15 @@ class NewRecordViewModel {
     }
 
     func saveRecordClicked() {
+        let record = NoteRecord(path: recordClipPath ?? "", category: 0, text: "hi")
+        dbManager.store(note: record)
 
     }
 
     //MARK:  - private methods
 
     private func startRecord() {
-        audioRecorder.record()
+        audioRecorder.record(savePath: filesManager.createNewFile(ext: "m4a"))
 
     }
 
@@ -64,6 +68,7 @@ class NewRecordViewModel {
 extension NewRecordViewModel: AudioRecorderDelegate {
     func recordSuccess(filePath: String) {
         recordClipPath = filePath
+
     }
 
     func recordFailed(error: AudioRecorderError) {
