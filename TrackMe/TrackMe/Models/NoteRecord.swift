@@ -11,9 +11,10 @@ import Realm
 import RealmSwift
 class NoteRecord: Object {
     @objc dynamic var path = ""
-    @objc dynamic var category = 0
+    @objc dynamic var category: NoteCategory = .other
     @objc dynamic var text = ""
-    init(path: String, category: Int, text: String) {
+    @objc dynamic let date = Date()
+    init(path: String, category: NoteCategory, text: String) {
         super.init()
         self.path = path
         self.category = category
@@ -23,7 +24,7 @@ class NoteRecord: Object {
     required init() {
         super.init()
         path = ""
-        category = 0
+        category = .other
         text = ""
     }
 

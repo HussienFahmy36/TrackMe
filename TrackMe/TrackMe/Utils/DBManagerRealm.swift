@@ -8,11 +8,13 @@
 
 import Foundation
 import RealmSwift
-struct DBManager {
-    func store(note: NoteRecord) {
+struct DBManagerRealm: DBManagerProtocol {
+    func store(note: Any) {
+        if let note = note as? Object {
         let realm = try! Realm()
         try! realm.write {
             realm.add(note)
+            }
         }
     }
 }

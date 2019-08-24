@@ -13,7 +13,7 @@
         <!--Track me-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="HomeScreen" customModule="TrackMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="HomeScreen" customModule="TrackMe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -25,7 +25,7 @@
                                 <rect key="frame" x="9" y="97" width="396" height="765"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="dJl-XH-zUM" detailTextLabel="Aqh-AD-ByY" style="IBUITableViewCellStyleValue2" id="SV9-aw-yPJ">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HomeCell" textLabel="dJl-XH-zUM" detailTextLabel="Aqh-AD-ByY" style="IBUITableViewCellStyleValue2" id="SV9-aw-yPJ" customClass="HomeCell" customModule="TrackMe" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="396" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SV9-aw-yPJ" id="DDL-Ox-dAZ">
@@ -48,6 +48,10 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cellCategory" destination="dJl-XH-zUM" id="yqw-xG-bcc"/>
+                                            <outlet property="cellDescription" destination="Aqh-AD-ByY" id="aYF-Z3-BVD"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -66,6 +70,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Track me" largeTitleDisplayMode="never" id="0NB-Me-w7W"/>
+                    <connections>
+                        <outlet property="notesTableView" destination="uIx-sh-4xk" id="w44-GP-q12"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -124,26 +131,29 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionViewCell" id="hcE-Ni-UNa">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="NoteCateogoryCell" id="hcE-Ni-UNa" customClass="NoteCateogryCell" customModule="TrackMe" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="107" height="39"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                     <rect key="frame" x="0.0" y="0.0" width="107" height="39"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Work" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jvm-S9-Kmd">
-                                                            <rect key="frame" x="33.666666666666664" y="9" width="39.999999999999993" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1OS-rK-Ua2" customClass="NoteCategoryView" customModule="TrackMe" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="107" height="39"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </view>
                                                     </subviews>
                                                 </view>
-                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstItem="Jvm-S9-Kmd" firstAttribute="centerY" secondItem="hcE-Ni-UNa" secondAttribute="centerY" id="2ZR-w0-7Hs"/>
-                                                    <constraint firstItem="Jvm-S9-Kmd" firstAttribute="centerX" secondItem="hcE-Ni-UNa" secondAttribute="centerX" id="agD-JF-jwf"/>
+                                                    <constraint firstItem="1OS-rK-Ua2" firstAttribute="leading" secondItem="hcE-Ni-UNa" secondAttribute="leading" id="4WG-wO-qtA"/>
+                                                    <constraint firstAttribute="bottom" secondItem="1OS-rK-Ua2" secondAttribute="bottom" id="flD-Qj-pLS"/>
+                                                    <constraint firstItem="1OS-rK-Ua2" firstAttribute="top" secondItem="hcE-Ni-UNa" secondAttribute="top" id="uBa-uE-Qqb"/>
+                                                    <constraint firstAttribute="trailing" secondItem="1OS-rK-Ua2" secondAttribute="trailing" id="ySf-Dt-TcC"/>
                                                 </constraints>
+                                                <connections>
+                                                    <outlet property="noteCategory" destination="1OS-rK-Ua2" id="ULW-Z2-OaZ"/>
+                                                </connections>
                                             </collectionViewCell>
                                         </cells>
                                     </collectionView>
@@ -181,6 +191,7 @@
                         <viewLayoutGuide key="safeArea" id="RFg-Rr-RhC"/>
                     </view>
                     <connections>
+                        <outlet property="noteCategoryCollectionView" destination="k2W-Lr-Caf" id="7S9-Ve-rp4"/>
                         <outlet property="recordButton" destination="BSP-jG-q35" id="WAi-hl-Gw2"/>
                     </connections>
                 </viewController>

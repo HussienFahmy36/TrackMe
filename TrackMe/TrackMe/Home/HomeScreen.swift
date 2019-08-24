@@ -10,6 +10,9 @@ import UIKit
 
 class HomeScreen: UIViewController {
 
+    let viewModel = HomeViewModel()
+    @IBOutlet weak var notesTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Home"
@@ -22,7 +25,22 @@ class HomeScreen: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
 
     }
+}
 
+//MARK: - uitableviewdelegate
 
+extension HomeScreen: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.cellsViewModel.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell", for: indexPath) as? HomeCell else {
+            return UITableViewCell()
+        }
+        return cell
+    }
+
+    
 }
 

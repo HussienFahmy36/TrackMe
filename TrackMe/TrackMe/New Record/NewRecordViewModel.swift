@@ -13,9 +13,10 @@ class NewRecordViewModel {
 
     private var audioRecorder = AudioRecorder()
     private let filesManager = FilesManager()
-    private let dbManager = DBManager()
+    private let dbManager = DBManagerRealm()
     private let stopRecordIcName = "stopRecordIc"
     private let startRecordIcName = "startRecordIc"
+    public let cateogires: [Int] = [NoteCategory.work.rawValue, NoteCategory.lifeStyle.rawValue, NoteCategory.other.rawValue]
     var isRecording = false
     var recordButtonImage : UIImage? {
         if !isRecording {
@@ -45,7 +46,7 @@ class NewRecordViewModel {
     }
 
     func saveRecordClicked() {
-        let record = NoteRecord(path: recordClipPath ?? "", category: 0, text: "hi")
+        let record = NoteRecord(path: recordClipPath ?? "", category: .other, text: "hi")
         dbManager.store(note: record)
 
     }
