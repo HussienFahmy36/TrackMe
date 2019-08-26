@@ -61,8 +61,6 @@ class NewRecordViewModel {
     private func stopRecord() {
         audioRecorder.stopRecord()
     }
-
-
 }
 
 // MARK - conform of AudioRecorderDelegate

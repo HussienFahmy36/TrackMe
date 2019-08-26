@@ -10,13 +10,24 @@ import Foundation
 import UIKit
 
 class HomeCell: UITableViewCell {
-
-    @IBOutlet weak var cellCategory: UILabel!
+    @IBOutlet weak var cellCategoryView: NoteCategoryView!
     @IBOutlet weak var cellDescription: UILabel!
-    
-    var viewModel: HomeCellViewModel?
+
     override func awakeFromNib() {
         super.awakeFromNib()
     }
 
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+    }
+
+    func config(_ viewModel: HomeCellViewModel) {
+        cellDescription.text = viewModel.noteDescription
+        cellCategoryView.config(NoteCateogoryViewModel(category: NoteCategory(rawValue: viewModel.category)))
+    }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        cellCategoryView.layoutSubviews()
+    }
 }

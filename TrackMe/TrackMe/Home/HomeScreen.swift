@@ -10,26 +10,28 @@ import UIKit
 
 class HomeScreen: UIViewController {
 
-    let viewModel = HomeViewModel()
+    var viewModel = HomeViewModel()
     @IBOutlet weak var notesTableView: UITableView!
-    
+    let cellHeight = 72
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Home"
         let item = UIBarButtonItem(title: "+", style: .done, target: self, action: #selector(addTapped))
         navigationItem.rightBarButtonItem = item
+        notesTableView.dataSource = self
+        notesTableView.delegate = self
     }
 
     @objc func addTapped() {
         guard let vc = storyboard?.instantiateViewController(withIdentifier: "NewRecordScreen") else {return}
         navigationController?.pushViewController(vc, animated: true)
-
     }
 }
 
 //MARK: - uitableviewdelegate
 
 extension HomeScreen: UITableViewDataSource, UITableViewDelegate {
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.cellsViewModel.count
     }
@@ -38,9 +40,14 @@ extension HomeScreen: UITableViewDataSource, UITableViewDelegate {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell", for: indexPath) as? HomeCell else {
             return UITableViewCell()
         }
+        cell.layoutIfNeeded()
+        cell.config(viewModel.cellsViewModel[indexPath.row])
         return cell
     }
 
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return CGFloat(cellHeight)
+    }
     
 }
 

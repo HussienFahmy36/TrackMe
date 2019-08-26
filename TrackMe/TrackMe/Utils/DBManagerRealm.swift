@@ -9,6 +9,21 @@
 import Foundation
 import RealmSwift
 struct DBManagerRealm: DBManagerProtocol {
+
+
+    init() {
+        configure()
+    }
+    
+    func configure() {
+        var config = Realm.Configuration()
+        let trackMeDBName = "DBTrackMe"
+        config.fileURL = config.fileURL!.deletingLastPathComponent().appendingPathComponent("\(trackMeDBName).realm")
+        Realm.Configuration.defaultConfiguration = config
+        print("DB URL : \(config.fileURL!.absoluteString)")
+
+    }
+
     func store(note: Any) {
         if let note = note as? Object {
         let realm = try! Realm()

@@ -9,8 +9,12 @@
 import Foundation
 struct HomeViewModel {
     var cellsViewModel: [HomeCellViewModel] = []
+    init() {
+        loadCells()
+    }
 
-    func loadCells() {
-        
+    mutating func loadCells() {
+        let vm = HomeCellViewModel(category: 0, noteDescription: "test")
+        cellsViewModel.append(vm)
     }
 }

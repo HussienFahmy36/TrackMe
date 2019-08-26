@@ -10,15 +10,18 @@ import UIKit
 
 class NoteCategoryView: UIView {
 
-    var styleColor: UIColor?
     let label = UILabel()
-    
+    var styleColor: UIColor?
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         backgroundColor = .clear
-        initLabel()
     }
 
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        initLabel()
+    }
+    
     func config(_ viewModel: NoteCateogoryViewModel) {
         switch viewModel.category {
         case .work?:
@@ -33,23 +36,23 @@ class NoteCategoryView: UIView {
         default:
             break
         }
+        setNeedsLayout()
         applyStyle()
     }
 
     func initLabel() {
         label.textColor = .clear
-        label.center = center
-        label.frame = frame
+        label.frame = CGRect(x: 0, y: 0, width: frame.width, height: frame.height)
         label.textAlignment = .center
         addSubview(label)
-
     }
 
     func applyStyle() {
         layer.borderWidth = 1
         layer.borderColor = styleColor?.cgColor
         layer.cornerRadius = 5
-        layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+        layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         label.textColor = styleColor ?? .clear
     }
+    
 }
