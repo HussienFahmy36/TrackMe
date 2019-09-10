@@ -8,15 +8,22 @@
 
 import Foundation
 struct HomeViewModel {
-    let dbManager = DBManagerRealm()
+    let dbManager = DBCacheManager()
+
+    var currentDate = Date()
+    var currentDateString: String {
+        return currentDate.asString(style: .short).removeSpecialCharsFromString()
+    }
+
     var cellsViewModel: [HomeCellViewModel] = []
+    var sectionsData: [(Int, [HomeCellViewModel])] = []
     init() {
         loadCells()
     }
 
     mutating func loadCells() {
         cellsViewModel = []
-        let results = dbManager.loadAll()
+        let results = dbManager.loadAll(date: currentDateString)
         results.forEach({
             guard let note = $0 as? NoteRecord else {
                 return
@@ -25,5 +32,10 @@ struct HomeViewModel {
             cellsViewModel.append(vm)
 
         })
+    }
+
+    private func filterResultsByDate() {
+
+
     }
 }

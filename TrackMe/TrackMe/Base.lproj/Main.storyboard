@@ -108,12 +108,13 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HGp-9q-qhJ">
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.80000000000000004" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="K7y-5q-Pde">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.80000000000000004" contentMode="scaleToFill" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K7y-5q-Pde">
                                         <rect key="frame" x="9" y="26" width="396" height="431"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="431" id="5mc-59-7dM"/>
                                         </constraints>
+                                        <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
@@ -220,6 +221,7 @@
                     </view>
                     <connections>
                         <outlet property="noteCategoryCollectionView" destination="k2W-Lr-Caf" id="7S9-Ve-rp4"/>
+                        <outlet property="noteText" destination="K7y-5q-Pde" id="c6U-eB-Zmx"/>
                         <outlet property="recordButton" destination="BSP-jG-q35" id="WAi-hl-Gw2"/>
                         <outlet property="saveButton" destination="RJr-Ba-azQ" id="IKB-4e-KMG"/>
                     </connections>

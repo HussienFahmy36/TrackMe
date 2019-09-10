@@ -13,7 +13,7 @@ class NewRecordViewModel {
 
     private var audioRecorder = AudioRecorder()
     private let filesManager = FilesManager()
-    private let dbManager = DBManagerRealm()
+    private let dbManager = DBCacheManager()
     private let stopRecordIcName = "stopRecordIc"
     private let startRecordIcName = "startRecordIc"
     private var noteText: String = "test"
@@ -47,7 +47,7 @@ class NewRecordViewModel {
         }
     }
 
-    func noteText(text: String) {
+    func noteText(_ text: String) {
         noteText = text
     }
 
@@ -80,22 +80,4 @@ extension NewRecordViewModel: AudioRecorderDelegate {
 
     func recordFailed(error: AudioRecorderError) {
     }
-
-
 }
-
-// MARK - conform of SpeechRecognition
-extension NewRecordViewModel: SpeechRecognizerDelegate {
-    func recognized(text: String) {
-        print(text)
-    }
-
-    func failedRecognition(error: Error) {
-        print("error")
-    }
-
-}
-
-
-
-

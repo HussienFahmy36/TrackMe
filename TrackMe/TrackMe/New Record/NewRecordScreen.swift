@@ -13,6 +13,7 @@ class NewRecordScreen: UIViewController {
     let viewModel = NewRecordViewModel()
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var noteText: UITextView!
     @IBOutlet weak var noteCategoryCollectionView: UICollectionView!
     
     override func viewDidLoad() {
@@ -34,6 +35,7 @@ class NewRecordScreen: UIViewController {
     }
 
     @IBAction func saveNote(_ sender: Any) {
+        viewModel.noteText(noteText.text)
         viewModel.saveRecordClicked()
     }
 }

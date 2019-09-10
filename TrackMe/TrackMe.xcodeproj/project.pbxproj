@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3A45C724230DC6280005F746 /* DBManagerRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A45C723230DC6280005F746 /* DBManagerRealm.swift */; };
 		3A45C727230DC6770005F746 /* NoteRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A45C726230DC6770005F746 /* NoteRecord.swift */; };
 		3A6FA69B230B18E000E08A8C /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6FA69A230B18E000E08A8C /* AudioRecorder.swift */; };
 		3A6FA69E230B197900E08A8C /* AudioRecorderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6FA69D230B197900E08A8C /* AudioRecorderDelegate.swift */; };
@@ -21,7 +20,6 @@
 		3A964F5A2311A7C4006D1CE0 /* HomeCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A964F592311A7C4006D1CE0 /* HomeCellViewModel.swift */; };
 		3A964F5E2311AAB9006D1CE0 /* NoteCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A964F5D2311AAB9006D1CE0 /* NoteCategoryView.swift */; };
 		3A964F602311AAF2006D1CE0 /* NoteCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A964F5F2311AAF2006D1CE0 /* NoteCategoryViewModel.swift */; };
-		3A9DC95F2317FD9B00315A1B /* SpeechRecognizerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9DC95E2317FD9B00315A1B /* SpeechRecognizerDelegate.swift */; };
 		3AB947B62309D89C00A0EEE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB947B52309D89C00A0EEE2 /* AppDelegate.swift */; };
 		3AB947B82309D89C00A0EEE2 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB947B72309D89C00A0EEE2 /* HomeScreen.swift */; };
 		3AB947BB2309D89C00A0EEE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AB947B92309D89C00A0EEE2 /* Main.storyboard */; };
@@ -29,6 +27,9 @@
 		3AB947C02309D89D00A0EEE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AB947BE2309D89D00A0EEE2 /* LaunchScreen.storyboard */; };
 		3AB947CB2309D89E00A0EEE2 /* TrackMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB947CA2309D89E00A0EEE2 /* TrackMeTests.swift */; };
 		3AB947D62309E31C00A0EEE2 /* NewRecordScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB947D52309E31C00A0EEE2 /* NewRecordScreen.swift */; };
+		3ACDFF5B2327D44300AF91DB /* DBCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACDFF5A2327D44300AF91DB /* DBCacheManager.swift */; };
+		3ACDFF5E2327D77C00AF91DB /* Date+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACDFF5D2327D77C00AF91DB /* Date+String.swift */; };
+		3ACDFF602327DC1A00AF91DB /* String+RemoveSpecialChars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACDFF5F2327DC1A00AF91DB /* String+RemoveSpecialChars.swift */; };
 		B6846BEAC1B670B20DF71467 /* Pods_TrackMeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E0DA2148BF07BE32847A60D /* Pods_TrackMeTests.framework */; };
 		C9D77F99EDE50B98A99A27EA /* Pods_TrackMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA0882CAEEE4DC5A5922499 /* Pods_TrackMe.framework */; };
 /* End PBXBuildFile section */
@@ -46,7 +47,6 @@
 /* Begin PBXFileReference section */
 		0EFA184997AA05597AAE5B9C /* Pods-TrackMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackMe.debug.xcconfig"; path = "Target Support Files/Pods-TrackMe/Pods-TrackMe.debug.xcconfig"; sourceTree = "<group>"; };
 		0FA0882CAEEE4DC5A5922499 /* Pods_TrackMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrackMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3A45C723230DC6280005F746 /* DBManagerRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManagerRealm.swift; sourceTree = "<group>"; };
 		3A45C726230DC6770005F746 /* NoteRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteRecord.swift; sourceTree = "<group>"; };
 		3A6FA69A230B18E000E08A8C /* AudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
 		3A6FA69D230B197900E08A8C /* AudioRecorderDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorderDelegate.swift; sourceTree = "<group>"; };
@@ -60,7 +60,6 @@
 		3A964F592311A7C4006D1CE0 /* HomeCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCellViewModel.swift; sourceTree = "<group>"; };
 		3A964F5D2311AAB9006D1CE0 /* NoteCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCategoryView.swift; sourceTree = "<group>"; };
 		3A964F5F2311AAF2006D1CE0 /* NoteCategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCategoryViewModel.swift; sourceTree = "<group>"; };
-		3A9DC95E2317FD9B00315A1B /* SpeechRecognizerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizerDelegate.swift; sourceTree = "<group>"; };
 		3AB947B22309D89C00A0EEE2 /* TrackMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrackMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AB947B52309D89C00A0EEE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3AB947B72309D89C00A0EEE2 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
@@ -72,6 +71,9 @@
 		3AB947CA2309D89E00A0EEE2 /* TrackMeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackMeTests.swift; sourceTree = "<group>"; };
 		3AB947CC2309D89E00A0EEE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3AB947D52309E31C00A0EEE2 /* NewRecordScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRecordScreen.swift; sourceTree = "<group>"; };
+		3ACDFF5A2327D44300AF91DB /* DBCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBCacheManager.swift; sourceTree = "<group>"; };
+		3ACDFF5D2327D77C00AF91DB /* Date+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+String.swift"; sourceTree = "<group>"; };
+		3ACDFF5F2327DC1A00AF91DB /* String+RemoveSpecialChars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+RemoveSpecialChars.swift"; sourceTree = "<group>"; };
 		4E0DA2148BF07BE32847A60D /* Pods_TrackMeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrackMeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		79B7DDD81267880BEC2B3200 /* Pods-TrackMeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackMeTests.debug.xcconfig"; path = "Target Support Files/Pods-TrackMeTests/Pods-TrackMeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7FCA60F190E3FD3FA5B59ACF /* Pods-TrackMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackMe.release.xcconfig"; path = "Target Support Files/Pods-TrackMe/Pods-TrackMe.release.xcconfig"; sourceTree = "<group>"; };
@@ -123,7 +125,7 @@
 			children = (
 				3A6FA69A230B18E000E08A8C /* AudioRecorder.swift */,
 				3A6FA6A1230B1EFC00E08A8C /* FilesManager.swift */,
-				3A45C723230DC6280005F746 /* DBManagerRealm.swift */,
+				3ACDFF5A2327D44300AF91DB /* DBCacheManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -133,7 +135,6 @@
 			children = (
 				3A6FA69D230B197900E08A8C /* AudioRecorderDelegate.swift */,
 				3A964F4D230F0F7F006D1CE0 /* DBManagerProtocol.swift */,
-				3A9DC95E2317FD9B00315A1B /* SpeechRecognizerDelegate.swift */,
 			);
 			path = protocols;
 			sourceTree = "<group>";
@@ -191,6 +192,7 @@
 		3AB947B42309D89C00A0EEE2 /* TrackMe */ = {
 			isa = PBXGroup;
 			children = (
+				3ACDFF5C2327D77000AF91DB /* extensions */,
 				3A964F5C2311AAA7006D1CE0 /* Note category */,
 				3A964F5B2311A7D4006D1CE0 /* New Record */,
 				3A964F532311A78A006D1CE0 /* Home */,
@@ -213,6 +215,15 @@
 				3AB947CC2309D89E00A0EEE2 /* Info.plist */,
 			);
 			path = TrackMeTests;
+			sourceTree = "<group>";
+		};
+		3ACDFF5C2327D77000AF91DB /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3ACDFF5D2327D77C00AF91DB /* Date+String.swift */,
+				3ACDFF5F2327DC1A00AF91DB /* String+RemoveSpecialChars.swift */,
+			);
+			path = extensions;
 			sourceTree = "<group>";
 		};
 		4FB9865FE41E490FE4B4A63C /* Frameworks */ = {
@@ -393,18 +404,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A964F5E2311AAB9006D1CE0 /* NoteCategoryView.swift in Sources */,
+				3ACDFF5E2327D77C00AF91DB /* Date+String.swift in Sources */,
 				3A6FA6A0230B1A9B00E08A8C /* NewRecordViewModel.swift in Sources */,
-				3A9DC95F2317FD9B00315A1B /* SpeechRecognizerDelegate.swift in Sources */,
 				3A6FA69E230B197900E08A8C /* AudioRecorderDelegate.swift in Sources */,
 				3AB947B82309D89C00A0EEE2 /* HomeScreen.swift in Sources */,
 				3A964F50230F1041006D1CE0 /* NoteCategory.swift in Sources */,
-				3A45C724230DC6280005F746 /* DBManagerRealm.swift in Sources */,
 				3A964F52230F1167006D1CE0 /* NoteCateogoryCell.swift in Sources */,
+				3ACDFF602327DC1A00AF91DB /* String+RemoveSpecialChars.swift in Sources */,
 				3AB947D62309E31C00A0EEE2 /* NewRecordScreen.swift in Sources */,
 				3A964F4E230F0F7F006D1CE0 /* DBManagerProtocol.swift in Sources */,
 				3A964F582311A7B7006D1CE0 /* HomeCell.swift in Sources */,
 				3A964F552311A7A4006D1CE0 /* HomeViewModel.swift in Sources */,
 				3A6FA6A2230B1EFC00E08A8C /* FilesManager.swift in Sources */,
+				3ACDFF5B2327D44300AF91DB /* DBCacheManager.swift in Sources */,
 				3A6FA69B230B18E000E08A8C /* AudioRecorder.swift in Sources */,
 				3A964F602311AAF2006D1CE0 /* NoteCategoryViewModel.swift in Sources */,
 				3A964F5A2311A7C4006D1CE0 /* HomeCellViewModel.swift in Sources */,
