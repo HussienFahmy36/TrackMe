@@ -15,6 +15,8 @@ class HomeCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        layer.cornerRadius = 4
+        clipsToBounds = true
     }
 
     override func draw(_ rect: CGRect) {

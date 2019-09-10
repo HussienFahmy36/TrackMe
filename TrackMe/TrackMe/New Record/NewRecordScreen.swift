@@ -12,6 +12,7 @@ class NewRecordScreen: UIViewController {
 
     let viewModel = NewRecordViewModel()
     @IBOutlet weak var recordButton: UIButton!
+    @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var noteCategoryCollectionView: UICollectionView!
     
     override func viewDidLoad() {
@@ -20,6 +21,10 @@ class NewRecordScreen: UIViewController {
         recordButton.setImage(viewModel.recordButtonImage, for: .normal)
         noteCategoryCollectionView.delegate = self
         noteCategoryCollectionView.dataSource = self
+        recordButton.clipsToBounds = true
+        saveButton.clipsToBounds = true
+        recordButton.layer.cornerRadius = 4
+        saveButton.layer.cornerRadius = 4
     }
     
 

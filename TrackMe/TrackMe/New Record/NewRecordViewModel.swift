@@ -14,7 +14,6 @@ class NewRecordViewModel {
     private var audioRecorder = AudioRecorder()
     private let filesManager = FilesManager()
     private let dbManager = DBManagerRealm()
-    private let audioRecognizer = SpeechRecognizer()
     private let stopRecordIcName = "stopRecordIc"
     private let startRecordIcName = "startRecordIc"
     private var noteText: String = "test"
@@ -31,7 +30,6 @@ class NewRecordViewModel {
 
     init() {
         audioRecorder.delegate = self
-        audioRecognizer.delegate = self
     }
 
     var recordText: String?
@@ -40,13 +38,11 @@ class NewRecordViewModel {
 
     func recordButtonClicked() {
         if !isRecording {
-//            startRecord()
-            startRecognition()
+            startRecord()
             isRecording = true
         }
         else {
-//            stopRecord()
-            stopRecognition()
+            stopRecord()
             isRecording = false
         }
     }
@@ -63,15 +59,6 @@ class NewRecordViewModel {
         let record = NoteRecord(path: recordClipPath ?? "", category: noteCategory, text: noteText)
         dbManager.store(note: record)
 
-    }
-
-    //MARK:  - private methods
-    private func startRecognition() {
-        audioRecognizer.recognize()
-    }
-
-    func stopRecognition() {
-        audioRecognizer.stopRecognize()
     }
 
     private func startRecord() {

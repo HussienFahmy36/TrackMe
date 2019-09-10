@@ -21,7 +21,6 @@
 		3A964F5A2311A7C4006D1CE0 /* HomeCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A964F592311A7C4006D1CE0 /* HomeCellViewModel.swift */; };
 		3A964F5E2311AAB9006D1CE0 /* NoteCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A964F5D2311AAB9006D1CE0 /* NoteCategoryView.swift */; };
 		3A964F602311AAF2006D1CE0 /* NoteCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A964F5F2311AAF2006D1CE0 /* NoteCategoryViewModel.swift */; };
-		3A9DC95D2317F86A00315A1B /* SpeechRecongnizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9DC95C2317F86A00315A1B /* SpeechRecongnizer.swift */; };
 		3A9DC95F2317FD9B00315A1B /* SpeechRecognizerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9DC95E2317FD9B00315A1B /* SpeechRecognizerDelegate.swift */; };
 		3AB947B62309D89C00A0EEE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB947B52309D89C00A0EEE2 /* AppDelegate.swift */; };
 		3AB947B82309D89C00A0EEE2 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB947B72309D89C00A0EEE2 /* HomeScreen.swift */; };
@@ -30,6 +29,8 @@
 		3AB947C02309D89D00A0EEE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AB947BE2309D89D00A0EEE2 /* LaunchScreen.storyboard */; };
 		3AB947CB2309D89E00A0EEE2 /* TrackMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB947CA2309D89E00A0EEE2 /* TrackMeTests.swift */; };
 		3AB947D62309E31C00A0EEE2 /* NewRecordScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB947D52309E31C00A0EEE2 /* NewRecordScreen.swift */; };
+		B6846BEAC1B670B20DF71467 /* Pods_TrackMeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E0DA2148BF07BE32847A60D /* Pods_TrackMeTests.framework */; };
+		C9D77F99EDE50B98A99A27EA /* Pods_TrackMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA0882CAEEE4DC5A5922499 /* Pods_TrackMe.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0EFA184997AA05597AAE5B9C /* Pods-TrackMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackMe.debug.xcconfig"; path = "Target Support Files/Pods-TrackMe/Pods-TrackMe.debug.xcconfig"; sourceTree = "<group>"; };
+		0FA0882CAEEE4DC5A5922499 /* Pods_TrackMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrackMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A45C723230DC6280005F746 /* DBManagerRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManagerRealm.swift; sourceTree = "<group>"; };
 		3A45C726230DC6770005F746 /* NoteRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteRecord.swift; sourceTree = "<group>"; };
 		3A6FA69A230B18E000E08A8C /* AudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
@@ -57,7 +60,6 @@
 		3A964F592311A7C4006D1CE0 /* HomeCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCellViewModel.swift; sourceTree = "<group>"; };
 		3A964F5D2311AAB9006D1CE0 /* NoteCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCategoryView.swift; sourceTree = "<group>"; };
 		3A964F5F2311AAF2006D1CE0 /* NoteCategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCategoryViewModel.swift; sourceTree = "<group>"; };
-		3A9DC95C2317F86A00315A1B /* SpeechRecongnizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecongnizer.swift; sourceTree = "<group>"; };
 		3A9DC95E2317FD9B00315A1B /* SpeechRecognizerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizerDelegate.swift; sourceTree = "<group>"; };
 		3AB947B22309D89C00A0EEE2 /* TrackMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrackMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AB947B52309D89C00A0EEE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +72,10 @@
 		3AB947CA2309D89E00A0EEE2 /* TrackMeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackMeTests.swift; sourceTree = "<group>"; };
 		3AB947CC2309D89E00A0EEE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3AB947D52309E31C00A0EEE2 /* NewRecordScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRecordScreen.swift; sourceTree = "<group>"; };
+		4E0DA2148BF07BE32847A60D /* Pods_TrackMeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrackMeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		79B7DDD81267880BEC2B3200 /* Pods-TrackMeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackMeTests.debug.xcconfig"; path = "Target Support Files/Pods-TrackMeTests/Pods-TrackMeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7FCA60F190E3FD3FA5B59ACF /* Pods-TrackMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackMe.release.xcconfig"; path = "Target Support Files/Pods-TrackMe/Pods-TrackMe.release.xcconfig"; sourceTree = "<group>"; };
+		C4994B2FC4DF47951633E3F4 /* Pods-TrackMeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrackMeTests.release.xcconfig"; path = "Target Support Files/Pods-TrackMeTests/Pods-TrackMeTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9D77F99EDE50B98A99A27EA /* Pods_TrackMe.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6846BEAC1B670B20DF71467 /* Pods_TrackMeTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +101,10 @@
 		37EAD592E9616914273EF265 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				0EFA184997AA05597AAE5B9C /* Pods-TrackMe.debug.xcconfig */,
+				7FCA60F190E3FD3FA5B59ACF /* Pods-TrackMe.release.xcconfig */,
+				79B7DDD81267880BEC2B3200 /* Pods-TrackMeTests.debug.xcconfig */,
+				C4994B2FC4DF47951633E3F4 /* Pods-TrackMeTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -112,7 +124,6 @@
 				3A6FA69A230B18E000E08A8C /* AudioRecorder.swift */,
 				3A6FA6A1230B1EFC00E08A8C /* FilesManager.swift */,
 				3A45C723230DC6280005F746 /* DBManagerRealm.swift */,
-				3A9DC95C2317F86A00315A1B /* SpeechRecongnizer.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -164,6 +175,7 @@
 				3AB947C92309D89E00A0EEE2 /* TrackMeTests */,
 				3AB947B32309D89C00A0EEE2 /* Products */,
 				37EAD592E9616914273EF265 /* Pods */,
+				4FB9865FE41E490FE4B4A63C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -203,6 +215,15 @@
 			path = TrackMeTests;
 			sourceTree = "<group>";
 		};
+		4FB9865FE41E490FE4B4A63C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0FA0882CAEEE4DC5A5922499 /* Pods_TrackMe.framework */,
+				4E0DA2148BF07BE32847A60D /* Pods_TrackMeTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -210,9 +231,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3AB947CF2309D89E00A0EEE2 /* Build configuration list for PBXNativeTarget "TrackMe" */;
 			buildPhases = (
+				DEC4B74568CA9700A03B10DC /* [CP] Check Pods Manifest.lock */,
 				3AB947AE2309D89C00A0EEE2 /* Sources */,
 				3AB947AF2309D89C00A0EEE2 /* Frameworks */,
 				3AB947B02309D89C00A0EEE2 /* Resources */,
+				E393594462EB6E07CDA1A5E1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -227,6 +250,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3AB947D22309D89E00A0EEE2 /* Build configuration list for PBXNativeTarget "TrackMeTests" */;
 			buildPhases = (
+				375C1D4CE00A858D7BDD268D /* [CP] Check Pods Manifest.lock */,
 				3AB947C22309D89E00A0EEE2 /* Sources */,
 				3AB947C32309D89E00A0EEE2 /* Frameworks */,
 				3AB947C42309D89E00A0EEE2 /* Resources */,
@@ -299,6 +323,70 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		375C1D4CE00A858D7BDD268D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TrackMeTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DEC4B74568CA9700A03B10DC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TrackMe-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E393594462EB6E07CDA1A5E1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TrackMe/Pods-TrackMe-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TrackMe/Pods-TrackMe-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TrackMe/Pods-TrackMe-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3AB947AE2309D89C00A0EEE2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -313,7 +401,6 @@
 				3A45C724230DC6280005F746 /* DBManagerRealm.swift in Sources */,
 				3A964F52230F1167006D1CE0 /* NoteCateogoryCell.swift in Sources */,
 				3AB947D62309E31C00A0EEE2 /* NewRecordScreen.swift in Sources */,
-				3A9DC95D2317F86A00315A1B /* SpeechRecongnizer.swift in Sources */,
 				3A964F4E230F0F7F006D1CE0 /* DBManagerProtocol.swift in Sources */,
 				3A964F582311A7B7006D1CE0 /* HomeCell.swift in Sources */,
 				3A964F552311A7A4006D1CE0 /* HomeViewModel.swift in Sources */,
@@ -482,6 +569,7 @@
 		};
 		3AB947D02309D89E00A0EEE2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0EFA184997AA05597AAE5B9C /* Pods-TrackMe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -500,6 +588,7 @@
 		};
 		3AB947D12309D89E00A0EEE2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FCA60F190E3FD3FA5B59ACF /* Pods-TrackMe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -518,6 +607,7 @@
 		};
 		3AB947D32309D89E00A0EEE2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79B7DDD81267880BEC2B3200 /* Pods-TrackMeTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -539,6 +629,7 @@
 		};
 		3AB947D42309D89E00A0EEE2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C4994B2FC4DF47951633E3F4 /* Pods-TrackMeTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

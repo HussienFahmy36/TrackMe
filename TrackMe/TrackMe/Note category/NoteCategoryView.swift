@@ -48,11 +48,10 @@ class NoteCategoryView: UIView {
     }
 
     func applyStyle() {
-        layer.borderWidth = 1
-        layer.borderColor = styleColor?.cgColor
+        backgroundColor = styleColor ?? .clear
         layer.cornerRadius = 5
         layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner, .layerMaxXMaxYCorner]
-        label.textColor = styleColor ?? .clear
+        label.textColor = .white
     }
 
 }
