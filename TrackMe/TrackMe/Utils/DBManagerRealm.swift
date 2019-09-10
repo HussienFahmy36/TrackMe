@@ -32,4 +32,10 @@ struct DBManagerRealm: DBManagerProtocol {
             }
         }
     }
+
+    func loadAll() -> [Any] {
+        let realm = try! Realm()
+        let notes = realm.objects(NoteRecord.self)
+        return notes.map({$0})
+    }
 }

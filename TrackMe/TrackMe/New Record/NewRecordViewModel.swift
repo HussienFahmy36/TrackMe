@@ -14,8 +14,11 @@ class NewRecordViewModel {
     private var audioRecorder = AudioRecorder()
     private let filesManager = FilesManager()
     private let dbManager = DBManagerRealm()
+    private let audioRecognizer = SpeechRecognizer()
     private let stopRecordIcName = "stopRecordIc"
     private let startRecordIcName = "startRecordIc"
+    private var noteText: String = "test"
+    private var noteCategory: NoteCategory = .other
     public let cateogires: [Int] = [NoteCategory.work.rawValue, NoteCategory.lifeStyle.rawValue, NoteCategory.other.rawValue]
     var isRecording = false
     var recordButtonImage : UIImage? {
@@ -28,6 +31,7 @@ class NewRecordViewModel {
 
     init() {
         audioRecorder.delegate = self
+        audioRecognizer.delegate = self
     }
 
     var recordText: String?
@@ -36,22 +40,39 @@ class NewRecordViewModel {
 
     func recordButtonClicked() {
         if !isRecording {
-            startRecord()
+//            startRecord()
+            startRecognition()
             isRecording = true
         }
         else {
-            stopRecord()
+//            stopRecord()
+            stopRecognition()
             isRecording = false
         }
     }
 
+    func noteText(text: String) {
+        noteText = text
+    }
+
+    func categorySelected(index: Int) {
+        noteCategory = NoteCategory(rawValue: index) ?? .other
+    }
+
     func saveRecordClicked() {
-        let record = NoteRecord(path: recordClipPath ?? "", category: .other, text: "hi")
+        let record = NoteRecord(path: recordClipPath ?? "", category: noteCategory, text: noteText)
         dbManager.store(note: record)
 
     }
 
     //MARK:  - private methods
+    private func startRecognition() {
+        audioRecognizer.recognize()
+    }
+
+    func stopRecognition() {
+        audioRecognizer.stopRecognize()
+    }
 
     private func startRecord() {
         audioRecorder.record(savePath: filesManager.createNewFile(ext: "m4a"))
@@ -71,8 +92,23 @@ extension NewRecordViewModel: AudioRecorderDelegate {
     }
 
     func recordFailed(error: AudioRecorderError) {
-
     }
 
 
 }
+
+// MARK - conform of SpeechRecognition
+extension NewRecordViewModel: SpeechRecognizerDelegate {
+    func recognized(text: String) {
+        print(text)
+    }
+
+    func failedRecognition(error: Error) {
+        print("error")
+    }
+
+}
+
+
+
+

@@ -10,4 +10,9 @@ import Foundation
 struct HomeCellViewModel {
     var category: Int!
     var noteDescription: String!
+    init(record: NoteRecord) {
+        category = record.category.rawValue
+        noteDescription = record.text
+    }
+
 }

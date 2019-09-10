@@ -13,6 +13,7 @@ class HomeScreen: UIViewController {
     var viewModel = HomeViewModel()
     @IBOutlet weak var notesTableView: UITableView!
     let cellHeight = 72
+
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Home"
@@ -20,6 +21,10 @@ class HomeScreen: UIViewController {
         navigationItem.rightBarButtonItem = item
         notesTableView.dataSource = self
         notesTableView.delegate = self
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        viewModel.loadCells()
+        notesTableView.reloadData()
     }
 
     @objc func addTapped() {

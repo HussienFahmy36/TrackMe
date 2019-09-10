@@ -34,7 +34,6 @@ class NewRecordScreen: UIViewController {
 }
 
 // MARK: - collectionView delegate
-
 extension NewRecordScreen: UICollectionViewDataSource, UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -51,5 +50,9 @@ extension NewRecordScreen: UICollectionViewDataSource, UICollectionViewDelegate 
         }
         cell.config(category)
         return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.categorySelected(index: indexPath.row)
     }
 }

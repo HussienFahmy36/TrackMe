@@ -21,7 +21,7 @@ class NoteCategoryView: UIView {
         super.awakeFromNib()
         initLabel()
     }
-    
+
     func config(_ viewModel: NoteCateogoryViewModel) {
         switch viewModel.category {
         case .work?:
@@ -54,5 +54,5 @@ class NoteCategoryView: UIView {
         layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         label.textColor = styleColor ?? .clear
     }
-    
+
 }

@@ -8,7 +8,8 @@
 
 import Foundation
 @objc enum NoteCategory: Int {
-    case work,
-    other,
-    lifeStyle
+    case work = 0
+    case lifeStyle = 1
+    case other = 2
+
 }

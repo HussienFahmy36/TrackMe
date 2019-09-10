@@ -29,11 +29,11 @@ class NoteRecord: Object {
     }
 
     required init(realm: RLMRealm, schema: RLMObjectSchema) {
-        fatalError("init(realm:schema:) has not been implemented")
+        super.init(realm: realm, schema: schema)
     }
 
     required init(value: Any, schema: RLMSchema) {
-        fatalError("init(value:schema:) has not been implemented")
+        super.init(value: value, schema: schema)
     }
 
 }

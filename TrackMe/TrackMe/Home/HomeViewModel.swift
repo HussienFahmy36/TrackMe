@@ -8,13 +8,22 @@
 
 import Foundation
 struct HomeViewModel {
+    let dbManager = DBManagerRealm()
     var cellsViewModel: [HomeCellViewModel] = []
     init() {
         loadCells()
     }
 
     mutating func loadCells() {
-        let vm = HomeCellViewModel(category: 0, noteDescription: "test")
-        cellsViewModel.append(vm)
+        cellsViewModel = []
+        let results = dbManager.loadAll()
+        results.forEach({
+            guard let note = $0 as? NoteRecord else {
+                return
+            }
+            let vm = HomeCellViewModel(record: note)
+            cellsViewModel.append(vm)
+
+        })
     }
 }
