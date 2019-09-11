@@ -9,5 +9,5 @@
 import Foundation
 protocol DBManagerProtocol {
     func store(note: Any)
-    func loadAll(date: String) -> [Any]
+    func load(with date: Date) -> [Any]
 }

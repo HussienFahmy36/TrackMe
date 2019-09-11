@@ -12,7 +12,8 @@ import UIKit
 class HomeCell: UITableViewCell {
     @IBOutlet weak var cellCategoryView: NoteCategoryView!
     @IBOutlet weak var cellDescription: UILabel!
-
+    @IBOutlet weak var cellDate: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -24,6 +25,7 @@ class HomeCell: UITableViewCell {
     func config(_ viewModel: HomeCellViewModel) {
         cellDescription.text = viewModel.noteDescription
         cellCategoryView.config(NoteCateogoryViewModel(category: NoteCategory(rawValue: viewModel.category)))
+        cellDate.text = viewModel.hour
     }
 
     override func layoutSubviews() {

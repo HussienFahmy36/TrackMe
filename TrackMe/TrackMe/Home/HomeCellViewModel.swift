@@ -7,12 +7,14 @@
 //
 
 import Foundation
-struct HomeCellViewModel {
+class HomeCellViewModel {
     var category: Int!
     var noteDescription: String!
+    var hour: String!
     init(record: NoteRecord) {
         category = record.category.rawValue
         noteDescription = record.text
+        hour = record.noteDateNative.getHourMinsAndSecs()
     }
 
 }

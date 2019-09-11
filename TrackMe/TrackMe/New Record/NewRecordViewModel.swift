@@ -58,7 +58,6 @@ class NewRecordViewModel {
     func saveRecordClicked() {
         let record = NoteRecord(path: recordClipPath ?? "", category: noteCategory, text: noteText)
         dbManager.store(note: record)
-
     }
 
     private func startRecord() {

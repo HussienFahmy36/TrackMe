@@ -13,6 +13,7 @@ class HomeScreen: UIViewController {
     var viewModel = HomeViewModel()
     @IBOutlet weak var notesTableView: UITableView!
     let cellHeight = 72
+    let headerHeight = 60
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,8 +38,14 @@ class HomeScreen: UIViewController {
 
 extension HomeScreen: UITableViewDataSource, UITableViewDelegate {
 
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return viewModel.sectionsData.count
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.cellsViewModel.count
+        if viewModel.sectionsData.count > 0 {
+            return viewModel.sectionsData[section].1.count
+        }
+        return 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -46,13 +53,39 @@ extension HomeScreen: UITableViewDataSource, UITableViewDelegate {
             return UITableViewCell()
         }
         cell.layoutIfNeeded()
-        cell.config(viewModel.cellsViewModel[indexPath.row])
+        let viewModelCell = viewModel.sectionsData[indexPath.section].1[indexPath.row]
+        cell.config(viewModelCell)
         return cell
     }
 
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let viewForSection = UIView(frame: CGRect(x: 0, y: 0, width: Int(tableView.frame.width), height: headerHeight))
+        viewForSection.backgroundColor = .clear
+        let label = UILabel(frame: CGRect(x: 30, y: 0, width: tableView.frame.width, height: CGFloat(headerHeight)))
+        label.textColor = .white
+        label.font = UIFont.systemFont(ofSize: 30)
+        label.textAlignment = .left
+        if viewModel.sectionsData.count > 0 {
+            let date = viewModel.sectionsData[section].0
+            label.text = date.asString(style: .medium)
+            viewForSection.addSubview(label)
+        }
+        return viewForSection
+    }
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return CGFloat(headerHeight)
+    }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return CGFloat(cellHeight)
     }
-    
+
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//        if indexPath.section == viewModel.sectionsData.count - 1 &&
+//            indexPath.row == viewModel.sectionsData[indexPath.section].1.count - 1{
+//            viewModel.goBackOneDay()
+//            tableView.reloadData()
+//        }
+    }
 }
 

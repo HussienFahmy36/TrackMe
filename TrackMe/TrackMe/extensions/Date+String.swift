@@ -13,4 +13,15 @@ extension Date {
         dateFormatter.dateStyle = style
         return dateFormatter.string(from: self)
     }
+
+    func getHourMinsAndSecs() -> String {
+        let date = Date()// Aug 25, 2017, 11:55 AM
+        let calendar = Calendar.current
+
+        let hour = calendar.component(.hour, from: date) //11
+        let minute = calendar.component(.minute, from: date) //55
+        let minuteString = (minute <= 10) ? "0\(minute)" : "\(minute)"
+        return "\(hour):\(minuteString)"
+
+    }
 }

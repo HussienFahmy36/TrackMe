@@ -19,8 +19,8 @@ struct DBCacheManager: DBManagerProtocol {
         }
     }
 
-    func loadAll(date: String) -> [Any] {
-        let fileName =  "\(date.removeSpecialCharsFromString()).json"
+    func load(with date: Date) -> [Any] {
+        let fileName =  "\(date.asString(style: .short).removeSpecialCharsFromString()).json"
         do {
             let result = try Disk.retrieve(fileName, from: .caches, as: [NoteRecord].self)
             return result

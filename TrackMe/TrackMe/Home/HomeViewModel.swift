@@ -7,35 +7,46 @@
 //
 
 import Foundation
-struct HomeViewModel {
+class HomeViewModel {
     let dbManager = DBCacheManager()
 
     var currentDate = Date()
     var currentDateString: String {
-        return currentDate.asString(style: .short).removeSpecialCharsFromString()
+        return currentDate.asString(style: .long).removeSpecialCharsFromString()
     }
-
-    var cellsViewModel: [HomeCellViewModel] = []
-    var sectionsData: [(Int, [HomeCellViewModel])] = []
+    var sectionsData: [(Date, [HomeCellViewModel])] = []
     init() {
         loadCells()
     }
 
-    mutating func loadCells() {
-        cellsViewModel = []
-        let results = dbManager.loadAll(date: currentDateString)
-        results.forEach({
-            guard let note = $0 as? NoteRecord else {
+    func loadCells() {
+        var cellsViewModel: [HomeCellViewModel] = []
+        let results = dbManager.load(with: currentDate)
+        for note in results where note is NoteRecord {
+            guard let note = note as? NoteRecord else {
                 return
             }
             let vm = HomeCellViewModel(record: note)
             cellsViewModel.append(vm)
+        }
 
-        })
+        if cellsViewModel.count > 0 {
+            let sectionIndex = sectionsData.firstIndex(where: {$0.0 == currentDate})
+            if cellsViewModel.count > 0 {
+                if  sectionIndex == nil {
+                    sectionsData.append((currentDate, cellsViewModel))
+                }
+                else {
+                    sectionsData[sectionIndex!].1.removeAll()
+                    sectionsData[sectionIndex!].1.append(contentsOf: cellsViewModel)
+                }
+            }
+
+        }
     }
 
-    private func filterResultsByDate() {
-
-
+    func goBackOneDay() {
+        currentDate = Calendar.current.date(byAdding: .day, value: -1, to: currentDate) ?? Date()
+        loadCells()
     }
 }

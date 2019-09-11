@@ -12,7 +12,8 @@ struct NoteRecord: Codable {
     var category: NoteCategory = .other
     var text = ""
     let dateString: String  = Date().asString(style: .short)
-
+    let noteDateNative = Date()
+    
     init(path: String, category: NoteCategory, text: String) {
         self.path = path
         self.category = category

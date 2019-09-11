@@ -44,7 +44,20 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Y0-C5-hqL">
-                                                    <rect key="frame" x="145" y="16" width="226" height="39"/>
+                                                    <rect key="frame" x="145" y="16" width="169" height="39"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7DA-XO-x7K">
+                                                    <rect key="frame" x="319" y="16" width="1" height="39"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="1" id="ww2-ry-idG"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vkh-F1-eZ5">
+                                                    <rect key="frame" x="328" y="25" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -52,17 +65,24 @@
                                             </subviews>
                                             <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="5Y0-C5-hqL" secondAttribute="trailing" constant="5" id="EP2-FP-kb3"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="5Y0-C5-hqL" secondAttribute="trailing" constant="60" id="EP2-FP-kb3"/>
+                                                <constraint firstAttribute="trailing" secondItem="vkh-F1-eZ5" secondAttribute="trailing" constant="24" id="Hjg-sz-uBe"/>
                                                 <constraint firstItem="vab-Pm-SLi" firstAttribute="top" secondItem="DDL-Ox-dAZ" secondAttribute="topMargin" constant="5" id="ISY-qV-fcb"/>
+                                                <constraint firstItem="7DA-XO-x7K" firstAttribute="bottom" secondItem="vab-Pm-SLi" secondAttribute="bottom" id="IX3-Cy-s2b"/>
+                                                <constraint firstItem="vkh-F1-eZ5" firstAttribute="centerY" secondItem="7DA-XO-x7K" secondAttribute="centerY" id="LPd-Js-WLU"/>
                                                 <constraint firstItem="5Y0-C5-hqL" firstAttribute="top" secondItem="vab-Pm-SLi" secondAttribute="top" id="VrZ-ut-8Ga"/>
+                                                <constraint firstItem="7DA-XO-x7K" firstAttribute="top" secondItem="vab-Pm-SLi" secondAttribute="top" id="XJJ-1r-epz"/>
                                                 <constraint firstItem="vab-Pm-SLi" firstAttribute="leading" secondItem="DDL-Ox-dAZ" secondAttribute="leadingMargin" constant="3" id="XW0-Hz-pbf"/>
                                                 <constraint firstItem="5Y0-C5-hqL" firstAttribute="leading" secondItem="vab-Pm-SLi" secondAttribute="trailing" constant="15" id="azs-oB-byT"/>
+                                                <constraint firstItem="vkh-F1-eZ5" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="DDL-Ox-dAZ" secondAttribute="leading" constant="20" symbolic="YES" id="c7q-0u-cls"/>
+                                                <constraint firstItem="7DA-XO-x7K" firstAttribute="leading" secondItem="5Y0-C5-hqL" secondAttribute="trailing" constant="5" id="ii7-ul-R6e"/>
                                                 <constraint firstItem="5Y0-C5-hqL" firstAttribute="bottom" secondItem="vab-Pm-SLi" secondAttribute="bottom" id="rfb-rO-Kwk"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="cellCategoryView" destination="vab-Pm-SLi" id="pxt-bb-36Z"/>
+                                            <outlet property="cellDate" destination="vkh-F1-eZ5" id="Gdo-yg-FNS"/>
                                             <outlet property="cellDescription" destination="5Y0-C5-hqL" id="mbF-mj-kGK"/>
                                         </connections>
                                     </tableViewCell>
